@@ -16,7 +16,7 @@ With around 250 million parameters, Flan-T5-Base is small enough to be fine-tune
 Given its lightweight nature, Flan-T5-Base is less resource-intensive, which translates to lower deployment costs and quicker response times. This is especially important for healthcare applications where scaling to handle large volumes of queries while minimizing costs is essential.
 
 # Details:
-In this project, I finetune the model with 2 methods, 1st being without QLoRA where we fine tune all of the 250M parameters and the 2nd being with QLoRA where only around 0.53% of the total parameters of the quantized model is finetuned, making it even less resource intensive. 
+In this project, I finetune the model with 2 methods, 1st being without QLoRA where we fine tune all of the 250M parameters and the 2nd being with QLoRA where only around 0.53% of the total parameters of the quantized model is finetuned, making it even less resource intensive. The models are then evaluated using ROUGE and BLEU Metrics 
 
 ### Ending results for finetuning without QLoRA:
 ![image](https://github.com/user-attachments/assets/b56c2d3d-b255-483d-8e82-9aeb1cc35ec6)
