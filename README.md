@@ -16,15 +16,22 @@ With around 250 million parameters, Flan-T5-Base is small enough to be fine-tune
 Given its lightweight nature, Flan-T5-Base is less resource-intensive, which translates to lower deployment costs and quicker response times. This is especially important for healthcare applications where scaling to handle large volumes of queries while minimizing costs is essential.
 
 # Details:
-In this project, I finetune the model with 2 methods, 1st being without QLoRA where we fine tune all of the 250M parameters and the 2nd being with QLoRA where only around 0.53% of the total parameters of the quantized model is finetuned, making it even less resource intensive. The models are then evaluated using ROUGE and BLEU Metrics 
+In this project, I finetune the model with 3 methods, 1st being without QLoRA where we fine tune all of the 250M parameters and the 2nd being LoRA followed by with QLoRA where only around 0.53% of the total parameters of the quantized model is finetuned, making it even less resource intensive. The models are then evaluated using ROUGE and BLEU Metrics 
 
 ### Ending results for finetuning without QLoRA:
 ![image](https://github.com/user-attachments/assets/b56c2d3d-b255-483d-8e82-9aeb1cc35ec6)
 
+### Ending results for finetuning with LoRA:
+![image](https://github.com/user-attachments/assets/97d40e40-1971-4545-a53e-e980ac107e04)
+
 ### Ending results for finetuning with QLoRA:
 ![image](https://github.com/user-attachments/assets/9d9175fc-ced4-42f4-a11b-42f09ff0bfc0)
 
-Both shows a massive improvement in terms of ROGUE and BLEU Metrics that we use to evaluate the capability of the finetuned model. There is a tradeoff whereby if we finetuned with QLoRA, it is less resource intensive to train but it is less accurate while without QLoRA, it is much more resource intensive but is is much more accurate
+### Comparing the performance of the finetuned model as compared to the based model using percentages
+![image](https://github.com/user-attachments/assets/5d6d14eb-c0b3-4ba7-bfdf-31799e1edc41)
+![image](https://github.com/user-attachments/assets/8447958c-5ce0-4c27-9a0a-59984250a521)
+
+All shows a massive improvement in terms of ROGUE and BLEU Metrics that we use to evaluate the capability of the finetuned model. There is a tradeoff whereby if we finetuned with LoRA and QLoRA, it is less resource intensive to train but it is less accurate while without QLoRA, it is much more resource intensive but is is much more accurate
 
 I have also added a code that utilize the Gradle library that will automate the production of the frontend, providing us with a clean UI to test our model. The sample of the UI can be seen from the very first image!
 
